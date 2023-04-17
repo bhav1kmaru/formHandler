@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Field from "./components/Field";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Link, Text } from "@chakra-ui/react";
 import useNode from "./hooks/useNode";
 
 const initialState = {
@@ -88,18 +88,37 @@ function App() {
     setFieldsData(temp);
   };
   return (
-    <Box w="40%" m="auto" mt="200px" border="1px solid" borderRadius={'15px'} padding="10px" textAlign={'center'}>
-      <Text>Field name and type</Text>
-      <Field
-        handleInsertNode={handleInsertNode}
-        handleEditNode={handleEditNode}
-        handleDeleteNode={handleDeleteNode}
-        handleEditNodeType={handleEditNodeType}
-        handleEditNodeStatus={handleEditNodeStatus}
-        fieldsData={fieldsData}
-      />
-      <Button onClick={()=>{console.log(fieldsData)}}>Save</Button>
-    </Box>
+    <>
+      <Box
+        w="40%"
+        m="auto"
+        mt="200px"
+        border="1px solid"
+        borderRadius={"15px"}
+        padding="10px"
+        textAlign={"center"}
+      >
+        <Text>Field name and type</Text>
+        <Field
+          handleInsertNode={handleInsertNode}
+          handleEditNode={handleEditNode}
+          handleDeleteNode={handleDeleteNode}
+          handleEditNodeType={handleEditNodeType}
+          handleEditNodeStatus={handleEditNodeStatus}
+          fieldsData={fieldsData}
+        />
+        <Button
+          onClick={() => {
+            console.log(fieldsData);
+          }}
+        >
+          Save
+        </Button>
+      </Box>
+      <Box textAlign={'center'}>
+        <Link href="https://bhav1kmaru.github.io">Bhavik Maru</Link>
+      </Box>
+    </>
   );
 }
 
